@@ -148,7 +148,7 @@ module CssCompressor
     #
     # Retain space for special IE6 cases
     #
-    css = css.gsub(/:first-(line|letter)(\{|,)/) { ":first-#{$1.to_s} #{$2.to_s}" }
+    css = css.gsub(/:first-(line|letter)(\{|,)/i) { ":first-#{$1.to_s.downcase} #{$2.to_s}" }
     
     #
     # No space after the end of a preserved comment
@@ -180,7 +180,7 @@ module CssCompressor
     #
     # Replace 0(px,em,%) with 0
     #
-    css = css.gsub(/([\s:])(0)(px|em|%|in|cm|mm|pc|pt|ex)/i) { $1.to_s + $2.to_s }
+    css = css.gsub(/(^|[^0-9])(?:0?\.)?0(?:px|em|%|in|cm|mm|pc|pt|ex|deg|g?rad|m?s|k?hz)/i) { $1.to_s + '0' }
     
     #
     # Replace 0 0 0 0; with 0
