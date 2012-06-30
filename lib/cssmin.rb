@@ -271,7 +271,7 @@ module CssCompressor
     #
     # border: none -> border:0
     #
-    css = css.gsub(/(border|border-top|border-right|border-bottom|border-right|outline|background):none(;|\})/i) { "#{$1.to_s.downcase}:0#{$2.to_s}" }
+    css = css.gsub(/(border|border-top|border-right|border-bottom|border-left|outline|background):none(;|\})/i) { "#{$1.to_s.downcase}:0#{$2.to_s}" }
     
     #
     # Shorter opacity IE filter

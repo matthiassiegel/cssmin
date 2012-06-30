@@ -181,11 +181,15 @@ describe "CssCompressor" do
       source = <<-EOS
         .classname {
             border: none;
+            border-top: none;
+            border-right: none;
+            border-bottom: none;
+            border-left: none;
             background: none;
             outline: none;
         }
       EOS
-      CssCompressor.compress(source).should eq('.classname{border:0;background:0;outline:0}')
+      CssCompressor.compress(source).should eq('.classname{border:0;border-top:0;border-right:0;border-bottom:0;border-left:0;background:0;outline:0}')
     end
   
     it "tolerates underscore/star hacks" do
