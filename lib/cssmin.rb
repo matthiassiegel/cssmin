@@ -1,5 +1,5 @@
 #
-# cssmin.rb - 1.0.0
+# cssmin.rb - 1.0.1
 # Author: Matthias Siegel - https://github.com/matthiassiegel/cssmin
 # This is a Ruby port of the CSS minification tool
 # distributed with YUICompressor, based on the original Java
