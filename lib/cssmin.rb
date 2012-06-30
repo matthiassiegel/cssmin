@@ -234,7 +234,7 @@ module CssCompressor
     rest = css
     new_css = ''
     
-    while m = rest.match(/(\=\s*?["']?)?#([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])([0-9a-fA-F])(:?\}|[^0-9a-fA-F{][^{]*?\})/i) do
+    while m = rest.match(/(\=\s*?["']?)?#([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])([0-9a-f])(:?\}|[^0-9a-f{][^{]*?\})/i) do
       #
       # Normal color value
       #
