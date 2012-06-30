@@ -204,7 +204,7 @@ module CssCompressor
     # Shorten colors from rgb(51,102,153) to #336699
     # This makes it more likely that it'll get further compressed in the next step.
     #
-    css = css.gsub(/rgb\s*\(\s*([0-9,\s]+)\s*\)/i) {
+    css = css.gsub(/rgb\s*\(\s*([0-9,\s]+)\s*\)(\d+%)?/i) {
       rgbcolors = $1.to_s.split(',')
       i = 0
       
@@ -216,6 +216,10 @@ module CssCompressor
         end
         
         i += 1
+      end
+      
+      unless $2.to_s.empty?
+        rgbcolors << (' ' + $2.to_s)
       end
       
       '#' + rgbcolors.join('')
